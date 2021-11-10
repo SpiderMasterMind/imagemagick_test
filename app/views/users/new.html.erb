@@ -1,1 +1,7 @@
 Users
+
+<%= form_for @user,  html: { multipart: true }  do |f| %>
+  <%= f.text_field :name, value: "Ben #{rand(1..99)}" %>
+  <%= f.file_field :avatar %>
+  <%= f.submit "Create" %>  
+<% end %>
