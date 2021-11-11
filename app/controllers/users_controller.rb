@@ -2,12 +2,11 @@
 class UsersController < ApplicationController
   def new
     @user = User.new
-  
   end
 
   def create
-    @user = User.new(name: user_params[:user])
-    @user.avatar = user_params[:avatar]
+    @user = User.new(name: user_params["name"])
+    @user.avatar = user_params["avatar"]
 
     if @user.save
       redirect_to(@user, :notice => 'User was successfully created.')
